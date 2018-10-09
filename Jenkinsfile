@@ -32,7 +32,9 @@ pipeline {
                 
                    
                 withCredentials([usernamePassword(credentialsId: '63843ac8-7069-4031-926e-568111134c26', passwordVariable: 'Password', usernameVariable: 'Username')]) {
-                     sh 'env'          
+                     sh 'env' 
+                    sh 'git config --global user.email "mangeshsoft0@gmail.com"'
+                    sh 'git config --global user.name "bmangesh"'
                     sh 'git tag -a v0.20 -m "my version v0.20"'
                 sh "git push https://${Username}:'${Password}'@github.com/bmangesh/JenkinsDSL.git  refs/tags/v0.20"
 
