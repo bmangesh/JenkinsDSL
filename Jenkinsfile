@@ -47,39 +47,7 @@ pipeline {
         {
             steps {
                       //  emailext body: 'test mail', subject: 'test Mail', to: 'mangesh.bharsakle@afourtech.com,cc:mangesh.bharsakle@fixstream.com'
-            emailext body: '''Hi All,
-<br/>
-<br/>
-Full Build:- <a href="http://172.16.2.22/nexus/content/repositories/$SE_DEFAULT_BRANCH/com/fixstream/serviceeye/service-eye/${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}/service-eye-${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}.tgz">service-eye-$BRANCH_TO_BE_BUILT.$SE_BUILD_NUM.tgz</a>
-<br/>
-<br/>
-Patch Build:- <a href="http://172.16.2.22/nexus/content/repositories/$BUILD_NUMBER/com/fixstream/serviceeye/service-eye/${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}/service-eye-${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}-patch.tgz">service-eye-${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}-patch.tgz</a>
-<br/>
-<br/>
-UI Tar:- <a href="http://172.16.2.22/nexus/content/repositories/$currentBuild.fullDisplayName/com/fixstream/serviceeye/service-eye-ui/${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}/service-eye-ui-${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}.tar.gz">service-eye-ui-${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}.tar.gz</a>
-<br/>
-<br/>
-Rest/Connector Jar:- <a href="http://172.16.2.22/nexus/content/repositories/${REPO_NAME}/com/fixstream/serviceeye/service-eye-core/${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}/service-eye-core-${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}.jar">service-eye-core-${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}.jar</a>
-<br/>
-<br/>
-Logstash Base Zip:- <a href="http://172.16.2.22/nexus/content/repositories/${REPO_NAME}/com/fixstream/serviceeye/service-eye/${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}/service-eye-${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}-logstash-base.zip">service-eye-${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}-logstash-base.zip</a>
-<br/>
-<br/>
-Logstash Correlation Zip:- <a href="http://172.16.2.22/nexus/content/repositories/${REPO_NAME}/com/fixstream/serviceeye/service-eye/${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}/service-eye-${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}-logstash-correlation.zip">service-eye-${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}-logstash-correlation.zip</a>
-<br/>
-<br/>
-Logstash Ingestion Zip:- <a href="http://172.16.2.22/nexus/content/repositories/${REPO_NAME}/com/fixstream/serviceeye/service-eye/${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}/service-eye-${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}-logstash-ingestion.zip">service-eye-${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}-logstash-ingestion.zip</a>
-<br/>
-<br/>
-Elasticsearch Zip:- <a href="http://172.16.2.22/nexus/content/repositories/${REPO_NAME}/com/fixstream/serviceeye/service-eye/${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}/service-eye-${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}-elasticsearch.zip">service-eye-${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}-elasticsearch.zip</a>
-<br/>
-<br/>
-Jenkins URL:- <a href="$BUILD_URL">$BUILD_URL</a>
-<br/>
-<br/>
-Thanks,
-<br/>
-DevOps Team''', mimeType: '', subject: 'test Mail', to: 'mangesh.bharsakle@afourtech.com,cc:mangesh.bharsakle@fixstream.com'
+emailext body: '${FILE,path="/tmp/Sendemail.html"}', mimeType: 'HTML(text/html)', subject: 'test Mail', to: 'mangesh.bharsakle@afourtech.com,cc:mangesh.bharsakle@fixstream.com'
 
 
             }
