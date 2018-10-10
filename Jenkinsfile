@@ -50,10 +50,10 @@ pipeline {
             emailext body: '''Hi All,
 <br/>
 <br/>
-Full Build:- <a href="http://172.16.2.22/nexus/content/repositories/${REPO_NAME}/com/fixstream/serviceeye/service-eye/${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}/service-eye-${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}.tgz">service-eye-${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}.tgz</a>
+Full Build:- <a href="http://172.16.2.22/nexus/content/repositories/${SE_DEFAULT_BRANCH}/com/fixstream/serviceeye/service-eye/${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}/service-eye-${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}.tgz">service-eye-${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}.tgz</a>
 <br/>
 <br/>
-Patch Build:- <a href="http://172.16.2.22/nexus/content/repositories/${REPO_NAME}/com/fixstream/serviceeye/service-eye/${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}/service-eye-${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}-patch.tgz">service-eye-${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}-patch.tgz</a>
+Patch Build:- <a href="http://172.16.2.22/nexus/content/repositories/env.${SE_DEFAULT_BRANCH}/com/fixstream/serviceeye/service-eye/${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}/service-eye-${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}-patch.tgz">service-eye-${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}-patch.tgz</a>
 <br/>
 <br/>
 UI Tar:- <a href="http://172.16.2.22/nexus/content/repositories/${REPO_NAME}/com/fixstream/serviceeye/service-eye-ui/${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}/service-eye-ui-${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}.tar.gz">service-eye-ui-${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}.tar.gz</a>
