@@ -41,7 +41,14 @@ pipeline {
               }
            
         }   
-                }     
+                }   
+        
+        stage('send mail')
+        {
+            steps {
+                        emailext body: 'test mail', subject: 'test Mail', to: 'mangesh.bharsakle@afourtech.com,cc:mangesh.bharsakle@fixstream.com'
+            }
+        }
     
      }
     post {
@@ -51,7 +58,7 @@ pipeline {
             recipients: "mangesh.bharsakle@afourtech.com,mangesh.bharsakle@fixstream.com",
             sendToIndividuals: true])
         }
-        emailext body: 'test mail', subject: 'test Mail', to: 'mangesh.bharsakle@afourtech.com,cc:mangesh.bharsakle@fixstream.com'
+        
 
         success {
             mail to:"mangesh.bharsakle@afourtech.com,mangesh.bharsakle@fixstream.com", subject:"SUCCESS: ${currentBuild.fullDisplayName}", body: "Yay, we passed."
