@@ -56,7 +56,7 @@ Full Build:- <a href="http://172.16.2.22/nexus/content/repositories/${SE_DEFAULT
 Patch Build:- <a href="http://172.16.2.22/nexus/content/repositories/env.${SE_DEFAULT_BRANCH}/com/fixstream/serviceeye/service-eye/${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}/service-eye-${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}-patch.tgz">service-eye-${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}-patch.tgz</a>
 <br/>
 <br/>
-UI Tar:- <a href="http://172.16.2.22/nexus/content/repositories/${REPO_NAME}/com/fixstream/serviceeye/service-eye-ui/${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}/service-eye-ui-${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}.tar.gz">service-eye-ui-${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}.tar.gz</a>
+UI Tar:- <a href="http://172.16.2.22/nexus/content/repositories/${currentBuild.fullDisplayName}/com/fixstream/serviceeye/service-eye-ui/${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}/service-eye-ui-${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}.tar.gz">service-eye-ui-${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}.tar.gz</a>
 <br/>
 <br/>
 Rest/Connector Jar:- <a href="http://172.16.2.22/nexus/content/repositories/${REPO_NAME}/com/fixstream/serviceeye/service-eye-core/${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}/service-eye-core-${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}.jar">service-eye-core-${BRANCH_TO_BE_BUILT}.${SE_BUILD_NUM}.jar</a>
