@@ -31,12 +31,12 @@ pipeline {
         steps {
                 
                    
-                withCredentials([usernamePassword(credentialsId: '63843ac8-7069-4031-926e-568111134c26', passwordVariable: 'Password', usernameVariable: 'Username')]) {
-                     sh 'env' 
-                    sh 'git config --global user.email "mangeshsoft0@gmail.com"'
-                    sh 'git config --global user.name "bmangesh"'
-                    sh 'git tag -a v0.20 -m "my version v0.20"'
-                sh "git push https://${Username}:'${Password}'@github.com/bmangesh/JenkinsDSL.git  refs/tags/v0.20"
+                withCredentials([sshUserPrivateKey(credentialsId: 'sshgit', keyFileVariable: 'SSH_KEY')]) {
+                     
+                    sh 'env' 
+                    sh 'git tag -a v0.30 -m "my version v0.30"'
+                   // sh "git push https://${Username}:'${Password}'@github.com/bmangesh/JenkinsDSL.git  refs/tags/v0.20"
+                    sh "git push origin  refs/tags/v0.30"
 
               }
            
