@@ -47,7 +47,7 @@ pipeline {
         {
             steps {
                       //  emailext body: 'test mail', subject: 'test Mail', to: 'mangesh.bharsakle@afourtech.com,cc:mangesh.bharsakle@fixstream.com'
-emailext body: '${FILE,path="/tmp/Sendemail.html"}', mimeType: 'HTML(text/html)', subject: 'test Mail', to: 'mangesh.bharsakle@afourtech.com,cc:mangesh.bharsakle@fixstream.com'
+emailext body: '${FILE,path="/tmp/Sendemail.html"}', mimeType: 'text/html', subject: 'test Mail', to: 'mangesh.bharsakle@afourtech.com,cc:mangesh.bharsakle@fixstream.com'
 
 
             }
