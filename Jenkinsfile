@@ -79,7 +79,7 @@ Jenkins URL:- <a href="$BUILD_URL">$BUILD_URL</a>
 <br/>
 Thanks,
 <br/>
-DevOps Team''', mimeType: 'HTML(text/html)', subject: 'test Mail', to: 'mangesh.bharsakle@afourtech.com,cc:mangesh.bharsakle@fixstream.com'
+DevOps Team''', mimeType: 'text/html', subject: 'test Mail', to: 'mangesh.bharsakle@afourtech.com,cc:mangesh.bharsakle@fixstream.com'
 
 
             }
