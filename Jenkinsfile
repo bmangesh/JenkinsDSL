@@ -34,6 +34,7 @@ pipeline {
                 withCredentials([sshUserPrivateKey(credentialsId: 'sshgit', keyFileVariable: 'SSH_KEY')]) {
                 // sshagent (credentials: ['jenkins-generated-ssh-key']) {    
                     sh 'env' 
+                    ll
                   //  sh 'git tag -a v0.30 -m "my version v0.30"'
                    // sh "git push https://${Username}:'${Password}'@github.com/bmangesh/JenkinsDSL.git  refs/tags/v0.20"
                    // sh "git push origin  refs/tags/v0.30"
