@@ -30,7 +30,7 @@ pipeline {
                 stage('Git Push To Origin') {
                     when {
                           // Nightly or snapshot build is selected
-                            expression { params.BUILD_TYPE == 'nightly' }
+                            expression { params.BUILD_TYPE != 'snapshot' }
                    }
         steps {
                    
