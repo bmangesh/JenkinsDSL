@@ -64,8 +64,6 @@ emailext body: '${FILE,path="/tmp/Sendemail.html"}', mimeType: 'text/html', subj
         }
         
 
-        success {
-            mail to:"mangesh.bharsakle@afourtech.com,mangesh.bharsakle@fixstream.com", subject:"SUCCESS: ${currentBuild.fullDisplayName}", body: "Yay, we passed."
-        }
+        
       }
 } 
