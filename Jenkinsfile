@@ -29,31 +29,16 @@ pipeline {
 
                 stage('Git Push To Origin') {
         steps {
-                
-                   
-                withCredentials([sshUserPrivateKey(credentialsId: 'sshgit', keyFileVariable: 'SSH_KEY')]) {
-                // sshagent (credentials: ['jenkins-generated-ssh-key']) {    
-                    sh 'env' 
-                    
-                  //  sh 'git tag -a v0.30 -m "my version v0.30"'
-                   // sh "git push https://${Username}:'${Password}'@github.com/bmangesh/JenkinsDSL.git  refs/tags/v0.20"
-                   // sh "git push origin  refs/tags/v0.30"
+                   withCredentials([sshUserPrivateKey(credentialsId: 'sshgit', keyFileVariable: 'SSH_KEY')]) {
+                   sh 'git tag -a v0.30 -m "my version v0.30"'
+                   sh "git push https://${Username}:'${Password}'@github.com/bmangesh/JenkinsDSL.git  refs/tags/v0.20"
+                   sh "git push origin  refs/tags/v0.30"
 
               }
            
         }   
                 }   
-        
-        stage('send mail')
-        {
-            steps {
-                      //  emailext body: 'test mail', subject: 'test Mail', to: 'mangesh.bharsakle@afourtech.com,cc:mangesh.bharsakle@fixstream.com'
-emailext body: '${FILE,path="/tmp/Sendemail.html"}', mimeType: 'text/html', subject: 'test Mail', to: 'mangesh.bharsakle@afourtech.com,cc:mangesh.bharsakle@fixstream.com'
-
-
-            }
-        }
-    
+                  
      }
     post {
         always {
@@ -61,9 +46,7 @@ emailext body: '${FILE,path="/tmp/Sendemail.html"}', mimeType: 'text/html', subj
             notifyEveryUnstableBuild: true,
             recipients: "mangesh.bharsakle@afourtech.com,mangesh.bharsakle@fixstream.com",
             sendToIndividuals: true])
-        }
-        
-
-        
+        }   
+     
       }
 } 
