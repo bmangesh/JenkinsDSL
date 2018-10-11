@@ -28,11 +28,12 @@ pipeline {
         }
 
                 stage('Git Push To Origin') {
-        steps {
-                   when {
+                    when {
                           // Nightly or snapshot build is selected
                             expression { params.BUILD_TYPE == 'nightly' }
                    }
+        steps {
+                   
                    withCredentials([sshUserPrivateKey(credentialsId: 'sshgit', keyFileVariable: 'SSH_KEY')]) {
                    sh 'git tag -a v0.30 -m "my version v0.30"'
                    sh "git push https://${Username}:'${Password}'@github.com/bmangesh/JenkinsDSL.git  refs/tags/v0.20"
