@@ -27,7 +27,7 @@ pipeline {
             }
         }
         
-        stage('Send Success Mail'){
+        stage("Send Success Mail"){
                     emailext body: '${FILE, path="build-mail.template"}',
                     mimeType: 'text/html',
                     subject: '$PROJECT_NAME - Build # $FS_BUILD_NUM $BUILD_TYPE - $BUILD_STATUS!',
