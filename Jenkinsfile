@@ -29,7 +29,7 @@ pipeline {
         
         stage("Send Success Mail"){
             steps {
-                    emailext body: '${FILE, path="build-mail.template"}',
+                    emailext body: '${FILE, path="/tmp/Sendemail.html"}',
                     mimeType: 'text/html',
                     subject: '$PROJECT_NAME - Build # $FS_BUILD_NUM $BUILD_TYPE - $BUILD_STATUS!',
                     to: "${env.FS_CORE_BUILD_RECIPIENTS}"    
