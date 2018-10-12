@@ -32,7 +32,7 @@ pipeline {
                     emailext body: '${FILE, path="build-mail.template"}',
                     mimeType: 'text/html',
                     subject: '$PROJECT_NAME - Build # $FS_BUILD_NUM $BUILD_TYPE - $BUILD_STATUS!',
-                    to: 'env.FS_CORE_BUILD_RECIPIENTS'    
+                    to: "${env.FS_CORE_BUILD_RECIPIENTS}"    
                     }
         }
 
