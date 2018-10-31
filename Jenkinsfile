@@ -22,7 +22,7 @@ pipeline {
     stages {
         stage("build") {
             steps {
-                env
+                sh "env"
                 echo "Hello ${params.BUILD_TYPE}"
                 echo "Global ${SE_DEFAULT_BRANCH}"
             }
